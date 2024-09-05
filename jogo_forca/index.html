@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jogo da Forca</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Jogo da Forca:</h1>    
+    <div id="forca" name="forca"></div>
+    <div id="palavra1"></div>
+    <div id="palavra" font size="6"></div>
+
+    <p id="tentativas"></p>
+    <div id="mensagemfinal1"></div>
+    <div id="mensagemfinal2"></div>
+    <div id="dica1"></div>
+    <div id="dica2"></div>
+    <div id="resultado"></div>
+    
+
+    <form action="/" id="formulario" class="formulario" method="POST">
+      <label for="formletra">Digite uma letra:</label>
+      <input type="text" id="formletra" name="formletra" maxlength="1">
+      <button type="submit">Enviar</button>
+    </form>
+
+  </section>
+
+  <script src="./js/database.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

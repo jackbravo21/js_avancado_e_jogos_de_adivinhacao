@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jogo de adivinhacao</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Jogo de advinhação:</h1>
+    <p id="regra"></p>
+    <p id="tentativas"></p>
+
+    <form action="/" id="formulario" method="POST">
+      <label for="numero">Digite o número:</label>
+      <input type="text" id="numero" name="numero">
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+    <div id="dica1"></div>
+    <div id="dica2"></div>
+  </section>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2668 @@
+<script src="js/script.js"></script>
+
+console.log(`O Resultado da sua conta foi: ${num1 + num2}`);
+window.document.write("Um Texto");
+window.document.body.innerHTML = "Qualquer outra coisa";
+window.document.body.innerHTML += ", nova coisa";
+window.document.body.innerHTML += "<br />";		//quebra a linha dentro do innerHTML;
+
+//recarregar pagina:
+location.reload();
+
+//TRIM tira os espacos da string;
+terefaTexto.trim();
+
+//limpar console;
+console.clear();
+
+//includes:
+"Bandeira do Brasil".includes("brasil"); // retorna false
+
+//Escrever texto em uma div:
+textoRegra = "Digite um numero para adivinhar!";
+let regra1 = document.getElementById('regra');
+regra1.innerHTML = textoRegra;
+
+//mudando cor do BackGround e letra;
+<body bgcolor="black" style="color:white">
+<body bgcolor="black" style="color:rgb(0, 255, 0)">
+
+document.getElementById('tentativas');
+
+//criar elemento:
+window.document.createElement('h1');
+
+window.document.bgColor = 'black';			//modificar a cor do background;
+
+elementList = document.querySelector('p');
+
+let umaString = "Um texto com \"aspas\" ";	//deixa o texto com aspas, devido ao escape;
+
+parseInt();
+parseInt(var1);
+parseInt(Math.random()*100);			//numero random;
+
+-----
+//numero random;
+function random(min, max)
+{
+	const r = Math.random() * (max-min)+min;
+	return Math.floor(r);
+}
+let rand = random(1, 50);
+-----
+
+parseFloat();
+parseFloat(var2);
+
+toString();
+
+typeof();
+typeof variavel;
+
+window			//no console, exibe as opcoes;
+
+//pode ser exibido no console;
+window.alert('Mensagem!');			//Envia uma mensagem para o usuario;
+window.confirm("Deseja realmente apagar?);	//retorna um boolean de true e false na resposta;
+window.prompt("Digite seu nome: ");		//retorna o valor enviado; 
+
+let confirma = window.confirm("Realmente deseja apagar?");	//o confirma recebe o valor escolhido pelo usuario;
+let num1 = window.prompt("Digite um numero: ");			//o num1 vai receber o valor digitado pelo usuario;
+
+const nome = prompt("Digite seu nome: ");
+window.document.body.innerHTML = `O seu nome eh: ${nome}<br />`;
+const sobrenome = prompt("Digite seu sobrenome: ");
+window.document.body.innerHTML += `O seu nome eh: ${nome} ${sobrenome}<br />`;
+
+
+b.push(3);		//estou adicionando no array "b" o valor "3";
+
+==========
+- Strings sao indexadas, tem um index, como se fosse um array de caracteres;
+
+let umaString = "Um texto";
+
+console.log(umaString[4]);	//vai exibir a posicao 5 da string (porque comeca por 0);
+
+- Posso tambem digitar a variavel que contem a string e seguido de um ponto, verificar qual funcao eu quero;
+
+console.log(umaString.charAt(6));	//vai retornar o elemento na posicao 6, comecando por 0;
+
+- Para concatenar uma stirng, exatamente como o sinal de + faz;
+
+console.log(umaString.concat(" em", " um", " lindo dia.")); 	//concatena strings;
+console.log(umaString + " em" + " um" + " lindo dia."); 	//mesma coisa que o de cima;
+console.log(`${umaString} em um lindo dia`);			//com template String;
+
+- Descobrir qual a posicao de uma palavra:
+
+let umaString = "Um texto";
+console.log(umaString.indexOf('texto'));	//verifica a posicao do texto
+//R: 3;						//porque comeca pelo 0;
+
+console.log(umaString.lastIndexOf('o'));	//ele vai achar a posicao 7, normalmente;
+console.log(umaString.lastIndexOf('o', 3));	//defino qual posicao ele deve procurar, do 3 para o inicio;
+console.log(umaString.lastIndexOf('m', 3));	//resposta eh 1;
+
+//Expressao regular:
+
+console.log(umaString.match(/[a-z]/g));		//com o g, ele encontra texto e coloca em forma de array sem o U;
+console.log(umaString.match(/[a-z-A-Z]/g));	//vai exibir o U maiusculo tambem.
+console.log(umaString.match(/[a-z]));		//sem o g, ele encontra o primeiro texto e da as coordenadas;
+console.log(umaString.search(/[a-z]));		//retorna o indice;
+console.log(umaString.search(/x/));		//retorna o indice de onde estiver o X, na posicao 5, comecando por 0;
+
+//Maiusculas e minusculas:
+palavraSecreta.toUpperCase();
+palavraSecreta.toLocaleLowerCase();
+
+//Trocar ou substituir uma palavra ou letra por outra, pode tirar espacos tb:
+-------------------------------------------------------
+letrasJogadas
+(3) [' a', ' b', ' c']
+letrasJogadas[0] = letrasJogadas[0].replace(' ', '');
+'a'
+letrasJogadas[1] = letrasJogadas[1].replace(' ', '');
+'b'
+letrasJogadas[2] = letrasJogadas[2].replace(' ', '');
+'c'
+letrasJogadas
+(3) ['a', 'b', 'c']
+-------------------------------------------------------
+let fraseTeste = "Uma frase teste !";
+> fraseTeste
+'Uma frase teste !'
+> fraseTeste = fraseTeste.replace(" ", "");
+'Umafrase teste !'
+> fraseTeste = fraseTeste.replace(" ", "");
+'Umafraseteste !'
+> fraseTeste = fraseTeste.replace(" ", "");
+'Umafraseteste!'
+-------------------------------------------------------
+//Trocar todas as letras de uma vez:
+
+fraseTeste = "Urna frase area rua!";
+fraseTeste
+>'Urna frase area rua!'
+fraseTeste = fraseTeste.replace(/r/g, "l");			//troca todos os 'r' da frase por 'l';
+>'Ulna flase alea lua!'
+-------------------------------------------------------
+
+console.log(umaString.replace("Um", "Outra"));	//Faz a troca da palavra Um pela palavra Outra;
+console.log(umaString.replace(/Um/, "Outra"));	//Faz a mesma coisa que o de cima, porem com expressao regular;
+console.log(umaString.replace(/r/, "#"));	//Substitui o primeiro R da frase por um #;
+console.log(umaString.replace(/r/g, "#"));	//Com a flag "g", ele substitui todos os R da String pelo #;
+console.log(umaString.length);			//Exibe o tamanho da String, comecando pelo 0;
+
+
+//Fatiar:
+console.log(umaString.slice(2, 6));		//Fatia a partir do indice 2 ate o 5, o 6 eh o fim, nao eh contado;
+console.log(umaString.slice(-3));		//Pega os 3 ultimos caracteres, porque ele conta ao contrario do indice 0;
+console.log(umaString.slice(-5, -1));		//Pega os 5 ultimos caracteres, menos o ultimo, por ser -1, indice comeca no 0;
+console.log(umaString.substring(umaString.length -5));	//Faz a mesma coisa que um (umaString.slice(-5));
+console.log(umaString.substring(umaString.length -5, umaString.length -1,)); //Faz a mesma coisa que: (umaString.slice(-5, -1));
+
+console.log(umaString.split(" "));		//Dividir uma string pelo espaco, eh tipo o explode do php, vai pegar cada 						palavra e colocar num indice do array;
+console.log(umaString.split("r"));		//A letra colocada, nao sera incluida no array final, todo o resto sim;
+console.log(umaString.split(" ", 2));		//Vai pegar as duas primeiras palavras da frase apenas ("O rato");
+console.log(umaString.split(" ", 3));		//Vai pegar as tres primeiras palavras da frase apenas ("O rato roeu");
+console.log(umaString.toUpperCase());		//Transforma a string toda em maiuscula;
+console.log(umaString.toLowerCase());		//Transforma a string toda em maiuscula;
+
+console.log(num1.toString() + num2);		//converte o num1 para string;
+
+let num1 = 10.5789551255547;
+console.log(num1.toFixed(2));			//Deixa com apenas 2 casas decimais;
+console.log(Number.isInteger(num1));		//Verifica se o numero eh inteiro;
+console.log(Number.isNaN(temp));		//Verifica se a variavel eh um numero ou nao;
+console.log(Math.floor(num1);			//Arredonda o valor para baixo;
+console.log(Math.ceil(num1);			//Arredonda o valor para cima;
+console.log(Math.round(num1));			//Retorna o numero arredondado para o mais proximo;
+console.log(Math.max(1, 2, 3, 4, 5, -10, -15, -50));	//Retorna o maior numero da lista;
+console.log(Math.min(1, 2, 3, 4, 5, -10, -15, -50));	//Retorna o menor numero da lista;
+console.log(Math.random());			//Gera um numero aleatorio entre 0 e 1;
+console.log(Math.random() * (10 - 5) + 5;	//Numero aleatorio entre 10 e 5;
+console.log(Math.PI);				//Valor de PI;
+console.log(Math.pow(2, 10));			//2 elevado a 10, que eh o mesmo que fazer console.log(2 ** 10);
+console.log(numeroQualquer ** 0.5);		//Para fazer a raiz quadrada de qualquer numero eh soh usar "numero ** 0.5";
+
+==========
+
+const numero = Number(prompt("Digite um numero: "));
+const numeroTitulo = windows.document.getElementById('numero-titulo');
+const texto = document.getElementById('texto');
+
+numeroTitulo.innerHTML = numero;
+texto.innerHTML = ´<p>Seu numero -2 eh ${numero + 2},</p>´;
+
+==========
+
+Arrays:
+
+const alunos = ['Luiz', 'Maria', 'Joao', 1, true, null];
+console.log(alunos);
+console.log(alunos[0]);
+console.log(alunos[2]);
+
+alunos[0] = 'Eduardo';		//Substituo o indice 0;
+alunos[6] = 'Luiza';		//Add no indice que nao existe, portanto ele passa a existir;
+console.log(alunos.length);	//Tamanho do array;
+alunos[alunos.length] = 'Fabio';	//Adiona ao final do array;
+
+alunos.push('Otavio');		//Adiciona de forma correta ao final do array;
+alunos.push('Fabio');		//Adiciona de forma correta ao final do array;
+alunos.unshift('Marcelo');	//Adiciona ao inicio do array;
+alunos.pop();			//remove o ultimo elemento do array;
+alunos.shift()			//remove o primeiro elemento do array;
+const removido = alunos.pop();	//guarda em uma variavel o elemento removido do final do array;
+const removido = alunos.shift();	//guarda em uma variavel o elemento removido do inicio do array;
+
+delete alunos[1];		//deleta o indice 1 e ele fica fazio, com espaco vazio, os indices permanecem iguais, o indice 1 fica como undefined;
+console.log(alunos[50]);	//acessa um indice que nao existe, que vai dar undefined igual o exemplo acima;
+
+alunos.slice(0,3);		//fatia os elementos e exibe do 0 ate o 2, o 3 nao eh incluido;
+alunos.slice(0,-1);		//vai eliminar no ultimo elemento, porque o indice -1 volta o array ao contrario;
+alunos.slice(0,-2);		//elimina os dois ultimos elementos, porque ele vai rodar ao contrario os indices do array;
+console.log(typeof alunos);	//retorna uma objeto, porque arrays sao objetos;
+console.log(alunos instanceof Array);	//aqui vai dar true, porque o array alunos, eh uma instancia de Array no javascript;
+
+==========
+
+Funcoes:
+
+- Depois do return, nao sera executado nada mais abaixo da funcao;
+
+---
+
+function saudacao(){
+	console.log("Bom dia!");
+}
+
+saudacao();
+
+---
+
+function saudacao(nome){
+	bemvindo = `Seja Bem Vindo ${nome}!`
+	console.log(`Bom dia ${nome}!`);
+	return bemvindo;
+}
+
+saudacao('Jack');
+saudacao('Joao');
+saudacao('Maria');
+
+---
+
+function soma(x, y){
+	const resultado = x + y;
+	return resultado;
+}
+
+console.log(soma(2, 2));
+console.log(soma(3, 1));
+console.log(soma(5, 10));
+
+---
+
+//Com arrow Function:
+
+const raiz = (n) => {
+	return n ** 0.5;
+}
+
+console.log(raiz(9));
+console.log(raiz(16));
+console.log(raiz(25));
+
+==========
+
+Objetos:
+
+//Posso acessar uma propriedade de um objeto de duas maneiras:
+console.log(pessoa.nome);
+console.log(pessoa['nome']);
+
+---
+
+const pessoa1 = {
+	nome: 'Luiz',
+	sobrenome: 'Miranda',
+	idade: 25
+};
+
+console.log(pessoal.nome);
+console.log(pessoal.sobrenome);
+
+---
+
+function criaPessoa(nome, sobrenome, idade){
+	nome: nome,
+	sobrenome: sobrenome,
+	idade: idade
+
+	fala(){
+		console.log(`${this.nome} ${this.sobrenome} esta dando oi...`);
+	},
+
+	minhaIdade(){
+		console.log(`Minha idade atual eh ${this.idade}`);
+	},
+	
+	incrementaIdade(){
+		this.idade++;
+	}
+
+};
+
+const pessoa1 = criaPessoa('Luiz', 'Otavio', 25);
+const pessoa2 = criaPessoa('Maria', 'Oliveira', 32);
+const pessoa3 = criaPessoa('Joao', 'Moreira', 55);
+const pessoa4 = criaPessoa('Junior', 'Lara', 44);
+const pessoa5 = criaPessoa('Jean', 'Otavio', 69);
+
+pessoa1.fala();
+pessoa1.minhaIdade();
+pessoa1.incrementaIdade();
+
+==========
+
+Speed Operator "...";
+
+//valor original:
+let a = [1, 2, 3];
+
+//variavel que vai copiar o conteudo inteiro da variavel sem fazer referencia;
+let b = [...a];
+
+//variavel que faz referencia na memoria a variavel 'a';
+let c = a;
+
+==========
+
+document.querySelector('.class');
+document.querySelector('#id');
+
+form.addEventListener('submit', recebeEventoForm);
+
+
+-----
+
+    const nome = form.querySelector('.nome');
+    const sobrenome = form.querySelector('.sobrenome');
+    const peso = form.querySelector('.peso');
+    const altura = form.querySelector('.altura');
+
+    pessoas.push({
+      nome: nome.value,
+      sobrenome: sobrenome.value,
+      peso: peso.value,
+      altura: altura.value
+
+-----
+
+// Capturar evento de submit do formulário
+const form = document.querySelector('#formulario');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const inputPeso = e.target.querySelector('#peso');
+  const inputAltura = e.target.querySelector('#altura');
+
+  const peso = Number(inputPeso.value);
+  const altura = Number(inputAltura.value);
+
+  if (!peso) {
+    setResultado('Peso inválido', false);
+    return;
+  }
+
+  if (!altura) {
+    setResultado('Altura inválida', false);
+    return;
+  }
+
+  const imc = getImc(peso, altura);
+  const nivelImc = getNivelImc(imc);
+
+  const msg = `Seu IMC é ${imc} (${nivelImc}).`;
+
+  setResultado(msg, true);
+});
+
+//criar paragrafo:
+
+function criaP () {
+  const p = document.createElement('p');
+  return p;
+}
+
+function setResultado (msg, isValid) {
+  const resultado = document.querySelector('#resultado');
+  resultado.innerHTML = '';
+
+  const p = criaP();
+
+  if (isValid) {
+    p.classList.add('paragrafo-resultado');
+  } else {
+    p.classList.add('bad');
+  }
+
+  p.innerHTML = msg;
+  resultado.appendChild(p);
+}
+
+==========
+
+Ternario:
+
+//(condicao) ? 'Valor verdadeiro' : 'Valor para falso';
+
+const pontuacaoUsuario = 500;
+const nivelUsuario = pontuacaoUsuario >= 1000 ? 'Usuario VIP' : 'Usuario normal';
+console.log(nivelUsuario);
+
+const corUsuario = null;
+const corPadrao = corUsuario || 'Preta' ? 'A cor esta correta' : 'A cor esta incorreta';
+
+==========
+
+Object Date():
+//https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
+//O Date() conta os meses a partir de 0 e termina em 11;
+
+const data = new Date();
+console.log(data.toString());
+
+//posso setar a data tambem, ao inves de um espaco " " eu posso utilizar o T, para indicar que vem a hora depois;
+const data = new Date('2019-04-20 20:20:59');
+const data = new Date('2019-04-20T20:20:59');
+
+console.log('Dia', data.getDate());
+console.log('Mes', data.getMonth() + 1);	//Mes comeca do 0;
+console.log('Ano', data.getFullYear());
+console.log('Hora', data.getHours());
+console.log('Minutos', data.getMinutes());
+console.log('Segundos', data.getSeconds());
+console.log('Milisegundos', data.getMilliseconds());
+console.log('Dia da Semana', data.getDay());	//0 - Domingo, 6 - Sabado;
+console.log(Date.now);				//Completo sem formatacao;
+
+-----
+
+//funcao para mostrar uma data:
+
+function zeroAEsquerda(num){
+	return num >= 10 ? num : `0${num}`;
+}
+
+function formataData(data){
+	const dia = data.getDate();
+	const mes = data.getMonth();
+	const ano = data.getFullYear();
+	const hora = data.getHours();
+	const min = data.getMinutes();
+	const seg = data.getSeconds();
+
+	return `${dia}/${mes}/${ano} ${hora}:${min}:${seg}`;
+}
+
+const data = new Date();
+const dataBrasil = formataData(data);
+console.log(dataBrasil);
+
+-----
+
+==========
+
+Desestruturacao:
+
+-----
+
+let a = 'A'; //B
+let b = 'B'; //C
+let c = 'C'; //A
+
+const numeros = [1, 2, 3];
+const letras = [b, c, a];
+[a, b, c] = [1, 2, 3];
+
+//ou
+[a, b, c] = numeros;
+
+console.log(a, b, c);
+
+-----
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+//atribuir somente o primeiro numero;
+const primeiroNumero = numeros[0];
+console.log(primeiroNumero);
+
+//atribuir os dois primeiros numeros;
+const [primeiroNumero, segundoNumero] = numeros;
+
+//pegar valores e o resto;
+const [primeiroNumero, segundoNumero, ...resto] = numeros;
+console.log(primeiroNumero, segundoNumero);
+console.log(resto);
+
+-----
+
+//pegar valores pulando outros;
+const [um, , tres, , cinco, , sete] = numeros;
+console.log(primeiroNumero, segundoNumero);
+
+-----
+//		   0  1  2    0  1  2    0  1  2
+const numeros = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
+
+const [, [,,seis]] = numeros;
+console.log(seis);
+
+const [lista1, lista2, lista3] = numeros;
+console.log(lista3);
+console.log(lista3[2]);			//indice2;
+
+==========
+
+DESTRUTURACAO DE OBJETOS:
+
+const pessoa = {
+
+	nome: 'Luiz',
+	sobrenome: 'Miranda',
+	idade: 30,
+	endereco: {
+		rua: 'Av Brasil',
+		numero: 320
+	}
+};
+
+//atribuicao normal;
+const nome = pessoa.nome;
+console.log(nome);
+
+//atribuicao via desestruturacao;
+const {nome} = pessoa;
+console.log(nome);
+
+const {nome, sobrenome, idade} = pessoa;
+console.log(nome);
+
+//setando valores padroes caso nao exista;
+const {nome = 'Nao existe', sobrenome = '', idade = 18} = pessoa;
+console.log(nome, sobrenome, idade);
+
+//modificando, colocando outro nome na variavel padrao;
+const {nome: primeiroNome, sobrenome: ultimoNome, idade: valorIdade} = pessoa;
+console.log(primeiroNome, ultimoNome, valorIdade);
+
+//valor normal para exibir o endereco;
+const {nome, endereco} = pessoa;
+console.log(endereco);
+
+//desestruturando de forma especifica, extraindo apenas dois valores;
+const {endereco: {rua, numero}} = pessoa;
+console.log(rua, numero);
+
+//extrair dois valores e o endereco completo;
+const {endereco: {rua, numero}, endereco} = pessoa;
+console.log(rua, numero, endereco);
+
+//reatribuir os valores a outras variaveis simplificadas e atribuir um valor padrao para o numero;
+const {endereco: {rua: r, numero: n = 12345},
+	endereco: e} = pessoa;
+console.log(r, n, e);
+
+//pegar o resto das variaveis;
+const {nome, ...resto} = pessoa;
+console.log(resto);
+
+==========
+
+//Quando utilizar FOR:
+
+FOR CLASSICO: Geralmente com interaveis (arrays ou strings);
+FOR IN: Retorna o indice ou chave (strings, arrays ou objetos);
+FOR OF: Retorna o valor em si (interaveis, arrays ou strings);
+
+==========
+
+FOR:
+
+for(let i = 0; i >= 10; i++)
+{
+	console.log(i);
+}
+
+---
+
+const frutas = ['Maca', 'Pera', 'Uva'];
+console.log(frutas.length);
+
+for(let i = 0; i < frutas.length; i++){
+	console.log(`Indice ${i}: `, frutas[i]);
+}
+
+==========
+
+FOR IN:
+
+//Le e retorna os indices ou chaves do objeto;
+
+//		0	1	2
+const frutas = ['Pera', 'Maçã', 'Uva'];
+
+for (let i in frutas)
+{
+	console.log(i);
+}
+>0
+>1
+>2
+
+---
+
+const pessoa = {
+	nome: 'Luiz',
+	sobrenome: 'Otavio',
+	idade: 30
+};
+
+for(let indice in pessoa){
+	console.log(indice);
+}
+>nome
+>sobrenome
+>idade
+
+for(let chave in pessoa){
+	console.log(chave, pessoa[chave]);
+}
+>nome Luiz
+>sobrenome Otavio
+>idade 30
+
+==========
+
+FOR OF:
+
+//	      0123...
+const nome = 'Luiz Otavio';
+
+//o normal seria:
+for(let i = 0; i < nome.length; i++){
+	console.log(nome[i]);
+}
+
+//com o for in:
+for (let i in nome){
+	console.log(nome[i]);
+}
+
+//com FOR OF (le cada indice e retorna o valor):
+for(let valor of nome){
+	console.log(valor);
+}
+>L
+>u
+>i
+>z
+>
+>O
+>t
+>a
+>v
+>i
+>o
+
+-----
+
+const nomes = ['Luiz', 'Otavio', 'Henrique'];
+
+for(let valor of nomes){
+	console.log(valor);
+}
+>Luiz
+>Otavio
+>Henrique
+
+-----
+
+//ou com forEach:
+
+//pode receber um elemento/valor e um indice (elemento, indice, arrayCompleto);
+nomes.forEach(function(valor, indice, array){
+	console.log(indice, valor, array);	
+});
+//Resposta:
+>0 'Luiz' (3) ['Luiz', 'Otavio', 'Henrique']
+>1 'Otavio' (3) ['Luiz', 'Otavio', 'Henrique']
+>2 'Henrique' (3) ['Luiz', 'Otavio', 'Henrique']
+
+==========
+
+ForEach:
+
+//Deve ser criada uma funcao para usar:
+
+const array1 = ['a', 'b', 'c'];
+
+function percorrerArray(elemento, indice, array){
+console.log('a[' + indice + '] = ' + elemento);
+}
+
+array1.forEach(percorrerArray);
+
+Resposta:
+a[0] = a
+a[1] = b
+a[2] = c
+
+-----
+
+function array2(elemento, indice, array){
+console.log('a[' + indice + '] = ' + elemento);
+}
+
+[1,4,6,8,12,16,24].forEach(array2);
+
+Resultado:
+a[0] = 1
+a[1] = 4
+a[2] = 6
+a[3] = 8
+a[4] = 12
+a[5] = 16
+a[6] = 24
+
+-----
+
+array3 = [1,3,4,5,6,7,8];
+
+function percorrerArray(elemento, indice, array){
+console.log('Numero: ' + elemento);
+}
+
+array3.forEach(percorrerArray);
+
+Resposta:
+Numero: 1
+Numero: 3
+Numero: 4
+Numero: 5
+Numero: 6
+Numero: 7
+Numero: 8
+
+-----
+
+array3 = [0, 10, 20, 30, 40, 50, 60];
+
+function array6(elemento, indice, array){
+console.log("ID: " + indice + " | Array: " + array + " | Elemento: " + elemento)
+};
+
+ID: 0 | Array: 0,10,20,30,40,50,60 | Elemento: 0
+ID: 1 | Array: 0,10,20,30,40,50,60 | Elemento: 10
+ID: 2 | Array: 0,10,20,30,40,50,60 | Elemento: 20
+ID: 3 | Array: 0,10,20,30,40,50,60 | Elemento: 30
+ID: 4 | Array: 0,10,20,30,40,50,60 | Elemento: 40
+ID: 5 | Array: 0,10,20,30,40,50,60 | Elemento: 50
+ID: 6 | Array: 0,10,20,30,40,50,60 | Elemento: 60
+
+==========
+
+Ferramentas de DOM:
+
+document.querySelector('');
+document.querySelectorAll('');
+document.getElementById('');
+document.getElementsByClassName('');
+document.getElementsByName('');
+document.getElementsByTagName('');
+
+document.getElementsByClassName("vermelho teste");
+document.getElementById("principal").getElementsByClassName("teste");
+var elementos = document.getElementsByName("up");
+var elemento = document.getElementById("id");
+let els = document.getElementsByTagName("tagDosElementos");
+var el = document.querySelector(".myclass");	//retorna o primeiro elemento da classe "myclass";
+elementList = document.querySelectorAll("div.note, div.alert");	//Retorna uma lista de elementos presentes;
+
+
+const container = document.querySelector('.container');
+const div = document.createElement('div');
+
+let tituloT = document.querySelector('title');
+tituloT.innerHTML = "Programador";
+
+//vou selecionar a lista especifica pela Query mais o ID;
+<h1 id = 'titulo'>Listas:</h1>
+let seleciona1 = document.querySelector('h1#titulo');
+
+------
+//seleciona todos os titulos;
+let seleciona1 = document.querySelectorAll('h1');
+console.log(seleciona1);
+[h1#titulo, h1]			//Resposta;
+
+console.log(seleciona1[0]);
+<h1 id=​"titulo">​Listas:​</h1>​	//Resposta;1
+
+console.log(seleciona1[1]);
+<h1>​Sessao 3:​</h1>​		//Resposta;
+seleciona1[1].innerHTML = "Sessão Final:"; 
+------
+
+//Pegar varios <p> de uma vez, e selecionar o que eu quiser pelo indice;
+
+let variosParagrafos = document.querySelectorAll('p');
+
+variosParagrafos
+[p, p, p, p]					//Resposta;
+variosParagrafos[0]
+<p>​Lista de compras:​</p>​			//Resposta;
+variosParagrafos[1]
+<p>​Lista de Moradores:​</p>			//Resposta;
+variosParagrafos[2]
+<p>​Temos todas as listas aqui.​</p>​		//Resposta;
+variosParagrafos[3]
+<p>​Estas listas são importantes.​</p>​		//Resposta;
+
+------
+
+==========
+
+- Criar elementos (createElement, createTextNode, appendChild, innerText):
+
+Procedimento:
+- (1) Pega o lugar que vc quer adicinar o objeto, no caso pode ser o body e atribui a uma variavel;
+- (2) Cria o objeto, no caso pode ser um 'h1' ou um 'p' com o 'createElement';
+- (3) Cria o texto que vai ser inserido nesse 'h1' ou 'p' com 'createTextNode';
+- (4) Insere o texto criado com 'createTextNode' dentro do elemento criado 'h1' ou 'p' com 'appendChild';
+- (5) Ja criou o elemento com 'createElement', ja esta com o texto dentro inserido com 'appendChild', basta dar um 'appendChiled' para inserir tambem o 'h1' ou 'p' dentro do body;
+-----
+var elemento_pai = document.body;
+var titulo = document.createElement('h1');
+var texto = document.createTextNode('Testando um titulo!');
+titulo.appendChild(texto);
+elemento_pai.appendChild(titulo);
+-----
+
+Imagine que queiramos inserir um título (tag h1) ao elemento body de nossa página HTML.
+
+//Primeiro buscamos o elemento pai:
+var elemento_pai = document.body;
+
+//Agora criamos o elemento DOM.
+var titulo = document.createElement('h1');
+
+//Mas só o elemento não basta, precisamos de um texto para ele, ou seja, de um nó de texto.
+var texto = document.createTextNode("Um título qualquer");
+
+//Anexamos o nó de texto ao elemento.
+titulo.appendChild(texto);
+
+//E, finalmente, anexamos o elemento título ao elemento pai, no caso body.
+elemento_pai.appendChild(titulo);
+
+-----
+var elemento_pai = document.body;					//vai ser criado direto no body;
+var titulo       = document.createElement('h1');
+var texto        = document.createTextNode("Um título qualquer");
+titulo.appendChild(texto);
+elemento_pai.appendChild(titulo);
+-----
+
+==========
+
+//Pegar os estilos CSS do body;
+const estilosBody = getComputedStyle(document.body);
+const backgroundColorBody = estilosBody.backgroundColor;
+console.log(backgroundcolorBody);
+
+==========
+
+WHILE:
+
+-----
+let i = 0;
+
+while(i <= 10){
+	console.log(i);
+	i++;
+}  
+-----
+
+const nome = 'Luiz';
+let i = 0;
+
+while(i < nome.length){
+	console.log(nome[i]);
+	i++;
+}
+R:
+>L
+>u
+>i
+>z
+
+-----
+
+==========
+
+TERNARIO:
+
+x = 5;
+y = 10;
+x > y ? x : y;
+
+==========
+
+//try, catch, throw, finally;
+
+trow new Error(){
+	
+}
+
+==========
+
+setInterval e setTimeout:
+
+-----
+function mostraHora()
+{
+ let data = new Date();
+
+ return data.toLocaleTimeString('pt-BR', {
+  hour12: false
+});
+}
+console.log(mostraHora());
+-----
+
+function funcaoDoInterval(){
+ console.log(mostraHora());
+}
+
+setInterval(funcaoDoInterval, 1000);
+-----
+
+const timer = setInterval(function(){
+ console.log(mostraHora());
+}, 1000);
+-----
+
+//executa apenas uma vez;
+setTimeOut(function(){
+ clearInterval(timer);
+}, 3000);
+
+setTimeOut(function(){
+ console.log("Ola!");
+}, 5000);
+
+==========
+
+//SELECIONA E INSERE:
+
+  <section class="container">
+
+    <h1>Meu timer</h1>
+    <p class="relogio">00:00:00</p>
+    <p>
+      <button class="iniciar">Iniciar</button>
+      <button class="pausar">Pausar</button>
+      <button class="zerar">Zerar</button>
+    </p>
+
+  </section>
+
+const relogio = document.querySelector('.relogio');
+const iniciar = document.querySelector('.iniciar');
+const pausar = document.querySelector('.pausar');
+const zerar = document.querySelector('.zerar');
+
+iniciar.addEventListener('click', function(event){
+  relogio.innerHTML = 'cliquei no iniciar';
+});
+
+pausar.addEventListener('click', function(event){
+  relogio.innerHTML = 'cliquei em pausar';
+});
+
+zerar.addEventListener('click', function(event){
+  relogio.innerHTML = 'cliquei em zerar';
+});
+
+==========
+
+//Criando form que recebe o que foi escrito:
+
+-----
+
+  <section class="container">
+    <h1>Lista de tarefas</h1>
+    <p>
+      <input type="text" class="input-tarefa">
+      <button class="btn-tarefa">Adicionar nova tarefa</button>
+    </p>
+
+    <ul class="tarefas"></ul>
+  </section>
+
+  <script src="./assets/js/main.js"></script>
+
+---
+
+const inputTarefa = document.querySelector('.input-tarefa');
+const btnTarefa = document.querySelector('.btn-tarefa');
+const tarefas = document.querySelector('.tarefas');
+
+btnTarefa.addEventListener('click', function()
+{
+	if(!inputTarefa.value)return;
+	console.log(inputTarefa.value);
+});
+
+-----
+
+==========
+
+Mesma coisa que a unity: keypress, keyup, keydown, keyCode;
+
+==========
+
+addEventListener('', function(){});
+
+==========
+
+FUNCOEES:
+
+----
+
+// Declaração de função (Function hoisting)
+falaOi();
+function falaOi() {
+  console.log('Oie');
+}
+
+----
+
+// First-class objects (Objetos de primeira classe)
+// Function expression
+const souUmDado = function() {
+  console.log('Sou um dado.');
+};
+souUmDado();
+
+----
+
+// Arrow function
+const funcaoArrow = () => {
+  console.log('Sou uma arrow function');
+};
+funcaoArrow();
+
+----
+
+// Dentro de um objeto
+const obj = {
+  falar() {
+    console.log('Estou falando...');
+  }
+};
+obj.falar();
+
+----
+
+// Args
+const conta = (...args) => {
+  console.log(args);
+};
+conta('+', 1, 20, 30, 40, 50);
+
+----
+
+//Colocar um valor default na entrada da funcao, caso nao seja setado;
+function funcao(a, b = 2, c = 4)
+{
+	console.log(a + b + c);
+}
+
+funcao(2, undefined, 20);
+
+----
+
+//Criar um array para enviar objetos de dados;
+function funcao([valor1, valor2, valor3])
+{
+	console.log(valor1, valor2, valor3);
+}
+
+funcao(['Luiz', 'Miranda', 30]);
+
+----
+
+//Somar os numeros enviados com rest operator '...';
+function conta(operador, acumulador, ...numeros)
+{
+	for(let numero of numeros)
+	{
+		if(operador === '+') acumulador += numero;
+		if(operador === '-') acumulador -= numero;
+		if(operador === '/') acumulador *= numero;
+		if(operador === '*') acumulador /= numero;
+	}
+	
+	console.log(acumulador);
+};
+
+conta('+', 0, 20, 30, 40, 50);
+
+----
+
+//Verificar os argumentos;
+const conta = function conta(operador, acumulador, ...numeros)
+{
+	console.log(arguments);
+};
+
+conta('+', 0, 20, 30, 40, 50);
+
+//mesma coisa para verificar os argumentos;
+const conta = (...args) => {
+	console.log(args);
+};
+conta('+', 0, 20, 30, 40, 50);
+
+==========
+
+//Funcao de callback:
+
+function greeting(name) {
+  alert("Olá " + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt("Por favor insira seu nome.");
+  callback(name);
+}
+
+processUserInput(greeting);
+
+==========
+
+//Funcao Auto Executavel:
+
+(function () {
+  var nome = "Felipe";
+})();
+// A variável nome não é acessível fora do escopo da expressão
+nome; // gerará o erro "Uncaught ReferenceError: nome is not defined";
+
+==========
+
+//addEventListener:
+
+  this.capturaCliques = () => {
+    document.addEventListener('click', event => {
+      const el = event.target;
+      if (el.classList.contains('btn-num')) this.addNumDisplay(el);
+      if (el.classList.contains('btn-clear')) this.clear();
+      if (el.classList.contains('btn-del')) this.del();
+      if (el.classList.contains('btn-eq')) this.realizaConta();
+    });
+  };
+
+==========
+
+//Recursividade:
+
+//Voce vai chamar a propria funcao, no caso desta ele vai fazer um contador, ate parar na condicao if;
+
+function recursiva(max) {
+  console.log(max);
+  if (max >= 100) return;
+  max++;
+  recursiva(max);
+}
+
+recursiva(0);
+
+
+==========
+
+//Funcoes geradoras:
+
+//caracteristica eh que se escreve com 'function*' e ela da uma especie de pause, fazendo com que vc tenha que usar o 'next' para ela ir para o proximo 'yield' que eh o mesmo que 'return';
+
+----
+function* geradora1() {
+  // Código qualquer ...
+  yield 'Valor 1';
+  // Código qualquer ...
+  yield 'Valor 2';
+  // Código qualquer ...
+  yield 'Valor 3';
+}
+
+const g1 = geradora1();
+console.log(g1.next().value);
+console.log(g1.next().value);
+console.log(g1.next());
+console.log(g1.next());
+ 
+----
+
+==========
+
+//Arrays:
+
+----
+
+const nomes = ['Eduardo', 'Maria', 'Joana'];
+
+const removidoUltimo = nomes.pop();			//mais usado;
+const removidoPrimeiro = nomes.shift();
+const adicionadoAoFinal = nomes.push('Joao');		//mais usado;
+const adicionaAoInicio = unshift('Wallace');
+const fatiarArray = nomes.slice(1, 3);			//fatia o array do 1 ao 3, -1;
+const fatiarArray = nomes.slice(1, -2);			//fatia do 1 e conta ao contrario do final a -2 posicoes;
+
+const nome = 'Luiz Otavio Miranda';
+const nomes = nome.split(' ');				//separa os strings por espaco ' ';
+R: ['Luiz', 'Otavio', 'Miranda'];
+
+const nome = 'Luiz, Otavio, Miranda';
+const nomes = nome.split(', ');				//separa os strings por espaco ', ';
+R: ['Luiz', 'Otavio', 'Miranda'];
+
+const nome = nomes.join(' ');				//utilizo o espaco para JUNTAR as palavras na string;
+
+----
+
+==========
+
+//SPLICE (Remove elementos ou substitui):
+
+//O splice vai sempre ser(o numero do indice do elemento, quantos elementos eu quero remover, o que vai substituir 'se tiver');
+
+//		 -5	 -4	   -3	      -2	-1
+//		  0	  1	    2	       3	 4
+const nomes = ['Maria', 'Joap', 'Eduardo', 'Gabriel', 'Julia'];
+
+//nomes.splice(indice, delete, elem1, elem2, elem3);
+
+//remover o elemento (3), e quantos eu quero remover(2);
+const removidos = nomes.splice(3, 2);
+console.log(nomes, removidos);
+R: ['Maria', 'Joap', 'Eduardo'] ['Gabriel', 'Julia'];
+
+const removidos = nomes.splice(-2, 2);
+console.log(nomes, removidos);
+R: ['Maria', 'Joap', 'Eduardo'] ['Gabriel', 'Julia'];
+
+//remover do indice -2 ate o final do array(infinito);
+const removidos = nomes.splice(-2, Number.MAX_VALUE);
+
+//vai remover o 'Gabriel' e add no lugar o 'Luiz';
+const removidos = nomes.splice(3, 1, 'Luiz');
+console.log(nomes, removidos);
+
+//vai remover o 'Gabriel' e a 'Julia' e add no lugar o 'Luiz';
+const removidos = nomes.splice(3, 2, 'Luiz');
+console.log(nomes, removidos);
+
+//vai remover o 'Gabriel' e a 'Julia' e add no lugar o 'Luiz' e 'Otavio';
+const removidos = nomes.splice(3, 2, 'Luiz', 'Otavio');
+console.log(nomes, removidos);
+
+//simulando o 'pop' e removendo o ultimo elemento;
+nomes.splice(-1, 1);
+console.log(nomes);
+
+//simulando o 'shift' e removendo o primeiro elemento;
+const removidos = nomes.splice(0, 1);
+console.log(nomes, removidos);
+
+//simulando o 'push' adicionando um elemento ao final do array;
+nomes.splice(nomes.length, 0, 'Luiz');
+console.log(nomes);
+
+//simulando o 'unshift', adicionando no comeco do array;
+nomes.splice(0, 0, 'Luiz', 'Otavio', 'Miranda');
+console.log(nomes);
+
+==========
+
+//CONCAT: (Concatenacao de arrays);
+
+const a1 = [1, 2, 3];
+const a2 = [4, 5, 6];
+const a3 = a1.concat(a2, [7, 8, 9], 'Luiz');
+
+//o spread operator "..." tambem soma assim:
+const a3 = [...a1, ...a2];
+
+// ... rest -> ... spread
+//adiciona valores a mais que as somas dos arrays;
+// const a3 = [...a1, 'Luiz', ...a2, ...[7, 8, 9]];
+
+
+console.log(a1, a2);
+console.log(a3);
+
+==========
+
+//FILTER:
+
+// Filter -> Sempre retornar um array, com a mesma quantidade de elementos
+// ou menos.
+
+// Retorne os números maiores que 10
+//               0  1   2   3  4 .....
+const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+const numerosFiltrados = numeros.filter(valor => valor > 50);
+// console.log(numerosFiltrados);
+
+// Retorne as pessoas que tem o nome com 5 letras ou mais
+// Retorne as pessoas com mais de 50 anos
+// Retorne as pessoas cujo nome termina com a
+const pessoas = [
+  { nome: 'Luiz', idade: 62 },
+  { nome: 'Maria', idade: 23 },
+  { nome: 'Eduardo', idade: 55 },
+  { nome: 'Letícia', idade: 19 },
+  { nome: 'Rosana', idade: 32 },
+  { nome: 'Wallace', idade: 47 },
+];
+const pessoasComNomeGrande = pessoas.filter(obj => obj.nome.length >= 5);
+const pessoasComMaisDeCinquentaAnos = pessoas.filter(obj => obj.idade > 50);
+const nomeTerminaComA = pessoas.filter(obj => {
+  return obj.nome.toLowerCase().endsWith('a');
+});
+console.log(nomeTerminaComA);
+
+==========
+
+//MAP:
+
+//Map sempre vai ter o tamanho do array original, vai fazer algo com todos os numeros do array;
+
+// Dobre os números
+//               0  1   2   3  4 .....
+const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+const numerosEmDobro = numeros.map(valor => valor * 2);
+// console.log(numerosEmDobro);
+
+// Para cada elemento:
+// Retorne apenas uma string com o nome da pessoa
+// Remova apenas a chave "nome" do objeto
+// Adicione uma chave id em cada objeto (id)
+const pessoas = [
+  { nome: 'Luiz', idade: 62 },
+  { nome: 'Maria', idade: 23 },
+  { nome: 'Eduardo', idade: 55 },
+  { nome: 'Letícia', idade: 19 },
+  { nome: 'Rosana', idade: 32 },
+  { nome: 'Wallace', idade: 47 },
+];
+const nomes = pessoas.map(obj => obj.nome);   				//Retorna somente o nome;
+const idades = pessoas.map(obj => ({ idade: obj.idade }));
+
+const comIds = pessoas.map(function(obj, indice) {
+  const newObj = { ...obj };			//cria um novo objeto e add todos os dados do obj original;
+  newObj.id = indice;				//add o ID dentro do novo objeto;
+  return newObj;				//retornando todo o novo objeto com o ID;
+});
+
+// console.log(pessoas);
+console.log(comIds);
+
+==========
+
+//REDUCE: (reduz um array a um unico elemento);
+
+// Some todos os números (reduce)
+//               0  1   2   3  4 .....
+const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+const total = numeros.reduce(function(acumulador, valor) {
+  if(valor % 2 !== 0) {
+    acumulador += valor;
+  }
+
+  return acumulador;
+}, 0);
+// console.log(total)
+
+// Retorne a pessoa mais velha
+const pessoas = [
+  { nome: 'Luiz', idade: 62 },
+  { nome: 'Maria', idade: 23 },
+  { nome: 'Eduardo', idade: 105 },
+  { nome: 'Letícia', idade: 10 },
+  { nome: 'Rosana', idade: 64 },
+  { nome: 'Wallace', idade: 1000 },
+];
+
+//se o valor for do acumulador for maior que a idade, retorna o acumulador;
+const maisVelha = pessoas.reduce(function(acumulador, valor) {
+  if(acumulador.idade > valor.idade) return acumulador;
+  return valor;
+});
+console.log(maisVelha);
+
+==========
+
+//Usando FILTER + MAP + REDUCE:
+//Filter retorna todos os itens que atendem a condicao;
+//Map passa por cada item de um array;
+//Reduce soma todos os itens e devolve;
+
+// Retorne a soma do dobro de todos os pares
+// -> Filtrar pares
+// -> Dobrar os valores
+// -> Reduzir (somar tudo)
+const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+const numerosPares = numeros
+  .filter(valor => valor % 2 === 0)
+  .map(valor => valor * 2)
+  .reduce((ac, valor) => ac + valor);
+
+console.log(numerosPares);
+
+==========
+
+//FOREACH:
+
+----
+
+const a1 = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+a1.forEach(function(valor, indice, array) {
+  console.log(valor, indice, array);
+});
+
+console.log(total);
+
+
+----
+
+const a1 = [10, 20, 30];
+let total = 0;
+
+a1.forEach(valor => {
+  total += valor;
+});
+
+console.log(total);
+
+==========
+
+//Ferramentas para objetos;
+
+/*
+Object.values
+Object.entries
+Object.getOwnPropertyDescriptor(o, 'prop')
+Object.assign(des, any)
+... (spread)
+
+// Já vimos
+Object.keys (retorna as chaves)
+Object.freeze (congela o objeto)
+Object.defineProperties (define várias propriedades)
+Object.defineProperty (define uma propriedade)
+*/
+
+==========
+
+//Objeto: Formado por uma variavel com chave e valor;
+
+----
+
+const pessoa = {
+	nome: 'Jack',
+	sobrenome: 'Bravo'
+};
+
+//posso acessar de duas maneiras:
+console.log(pessoa.nome);
+console.log(pessoa.sobrenome);
+
+//ou
+console.log(pessoa['nome']);
+console.log(pessoa['sobrenome']);
+
+----
+
+//literal
+const pessoa1 = new Object();
+pessoa1.nome = 'Jack';
+pessoa1.sobrenome = 'Bravo';
+pessoa1.idade = 30;
+pessoa1.falarNome = function(){
+	return(`${this.nome} esta falando seu nome.`);
+};
+pessoa1.getDataNascimento = function(){
+	const dataAtual = New Date();
+	return dataAtual.getFullYear() - this.idade;
+}
+
+console.log(pessoa1.nome);
+console.log(pessoa1.sobrenome);
+pessoa1.falarNome();
+console.log(pessoa1.getDataNascimento());
+
+//ver todas as chaves/campos do objeto:
+for(let chave in pessoa1){
+	console.log(chave);
+}
+
+//ver o valor nas chaves:
+for(let chave in pessoa1){
+	console.log(pessoa1[chave]);
+}
+
+
+----
+
+//construtor
+const pessoa2 = {
+nome: 'Luiz',
+sobrenome: 'Otavio'
+};
+
+console.log(pessoa1, pessoa2);
+
+----
+
+delete.pessoa1.nome;
+console.log(pessoa1);
+
+----
+
+==========
+
+//Copiando objetos:
+
+//Se eu copiar um objeto de forma literal, ele vai copiar o espaço na memoria:
+
+const produto = {nome: 'Caneca', preco: 1.8};
+const outraCoisa = produto;			//copiei o objeto e usei o mesmo endereco de memoria;
+
+produto;
+{nome: 'Caneca', preco: 1.8};
+outraCoisa;
+{nome: 'Caneca', preco: 1.8};
+
+outraCoisa.nome = 'Outro Nome';			
+outraCoisa.preco = 2.5;
+//vai mudar o nome dos dois, do produto e do outraCoisa porque os dois usam o mesmo espaco na memoria;
+produto;
+{nome: 'Outro nome', preco: 2.5}
+outraCoisa;
+{nome: 'Outro nome', preco: 2.5}
+
+//para copiar sem usar o mesmo espaco na memoria, deve-se usar o spreed "...";
+const terceiraCoisa = '...produto';
+
+//ou usar o "Object.assign";
+const terceiraCoisa = Object.assign({}, produto);
+terceiraCoisa;
+{nome: 'Outro nome', preco: 2.5}
+
+//copiando e adicionando um novo campo com "Object.assign";
+const quartaCoisa = Object.assign({}, produto, {material: 'porcelana'});
+quartaCoisa;
+{nome: 'Outro nome', preco: 2.5, material: 'porcelana'}
+
+//copiar soh as propriedades especificas;
+const caneca = {nome: produto.nome, preco: produto.preco};
+
+==========
+
+//Verificar as chaves de um objeto com 'Object.keys(objeto));
+
+const produto = {nome: 'Caneca', preco: 1.8};
+console.log(Object.keys(produto));
+Resposta: (2) ['nome', 'preco'];
+
+==========
+
+//Usando Prototype, eh soh usar ele como um atributo normal, soh que todos os objetos ja tem;
+
+function Produto(nome, preco) {
+  this.nome = nome;
+  this.preco = preco;
+}
+
+Produto.prototype.desconto = function(percentual) {
+  this.preco = this.preco - (this.preco * (percentual / 100));
+};
+
+Produto.prototype.aumento = function(percentual) {
+  this.preco = this.preco + (this.preco * (percentual / 100));
+};
+
+const p1 = new Produto('Camiseta', 50);
+
+// Literal
+const p2 = {
+  nome: 'Caneca',
+  preco: 15
+};
+Object.setPrototypeOf(p2, Produto.prototype);
+
+p2.aumento(10);
+
+const p3 = Object.create(Produto.prototype, {
+  preco: {
+    writable: true,
+    configurable: true,
+    enumerable: true,
+    value: 99
+  },
+  tamanho: {
+    writable: true,
+    configurable: true,
+    enumerable: true,
+    value: 42
+  },
+});
+p3.aumento(10);
+console.log(p3);
+
+==========
+
+//Constructor
+
+class Pessoa {
+  constructor(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+  }
+
+  get nomeCompleto() {
+    return this.nome + ' ' + this.sobrenome;
+  }
+
+  set nomeCompleto(valor) {
+    valor = valor.split(' ');
+    this.nome = valor.shift();
+    this.sobrenome = valor.join(' ');
+  }
+}
+
+const p1 = new Pessoa('Luiz', 'Miranda');
+p1.nomeCompleto = 'Luiz Miranda Olibeira';
+console.log(p1.nome);
+console.log(p1.sobrenome);
+
+==========
+
+//Criacao de Classes:
+
+class Pessoa {
+  constructor(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+  }
+
+  falar() {
+    console.log(`${this.nome} está falando.`);
+  }
+}
+
+function Pessoa2(nome, sobrenome) {
+  this.nome = nome;
+  this.sobrenome = sobrenome;
+}
+
+Pessoa2.prototype.falar = function() {
+  console.log(`${this.nome} está falando.`);
+};
+
+const p1 = new Pessoa('Luiz', 'Miranda');
+const p2 = new Pessoa2('Luiz', 'Miranda');
+
+==========
+
+//Getter e Setters:
+
+class Pessoa {
+  constructor(nome, sobrenome) {
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+  }
+
+  get nomeCompleto() {
+    return this.nome + ' ' + this.sobrenome;
+  }
+
+  set nomeCompleto(valor) {
+    valor = valor.split(' ');
+    this.nome = valor.shift();
+    this.sobrenome = valor.join(' ');
+  }
+}
+
+const p1 = new Pessoa('Luiz', 'Miranda');
+p1.nomeCompleto = 'Luiz Miranda Olibeira';
+console.log(p1.nome);
+console.log(p1.sobrenome);
+
+==========
+
+//Heranca com extends:
+
+class DispositoEletronico {
+  constructor(nome) {
+    this.nome = nome;
+    this.ligado = false;
+  }
+
+  ligar() {
+    if(this.ligado) {
+      console.log(this.nome + ' já ligado');
+      return;
+    }
+
+    this.ligado = true;
+  }
+
+  desligar() {
+    if(!this.ligado) {
+      console.log(this.nome + ' já desligado');
+      return;
+    }
+
+    this.ligado = false;
+  }
+}
+
+class Smartphone extends DispositoEletronico {
+  constructor(nome, cor, modelo) {
+    super(nome);
+
+    this.cor = cor;
+    this.modelo = modelo;
+  }
+}
+
+class Tablet extends DispositoEletronico {
+  constructor(nome, temWifi) {
+    super(nome);
+    this.temWifi = temWifi;
+  }
+
+  //Ao instanciar o objeto ele sempre vai procurar primeiro no objeto, se nao tiver, procura no pai;
+  ligar() {
+    console.log('Olha, você alterou o método ligar.');
+  }
+
+  falaOi() {
+    console.log('Oi');
+  }
+
+  static criador(nome, temWifi) {
+    return new Tablet.prototype.constructor(nome, temWifi);
+  }
+}
+
+const s1 = new Smartphone('Samsung', 'Preto', 'Galaxy S10');
+console.log(s1);
+
+const t1 = Tablet.criador('iPad', true);
+
+==========
+
+//Metodo Estatico;
+
+//Metodo estatico, nao se instancia, ele eh como o "Math.random()", que nao precisa instanciar;
+
+class ControleRemoto {
+  constructor(tv) {
+    this.tv = tv;
+    this.volume = 0;
+  }
+
+  // Método de instância
+  aumentarVolume() {
+    this.volume += 2;
+  }
+  diminuirVolume() {
+    this.volume -= 2;
+  }
+
+  // Método estático
+  static soma(x, y) {
+    console.log(this);
+  }
+}
+
+const controle1 = new ControleRemoto('LG');
+ControleRemoto.soma();
+
+==========
+
+//Promises:
+
+//todo codigo de promise vai ter uma arrow function com resolve e reject, soh posso mandar um parametro para o 
+resolve();
+
+-----
+return new Promise((resolve, reject) => {
+	setTimeout(() => {
+r		resolve(msg);
+}, tempo);
+
+});
+-----
+
+//sempre que chamarmos uma promise, vamos ter que solicitar um then() para o resolve, e um catch() para o reject;
+
+-----
+function rand(min, max) {
+  min *= 1000;
+  max *= 1000;
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function esperaAi(msg, tempo) {
+  return new Promise((resolve, reject) => {
+    if(typeof msg !== 'string') reject(false);
+
+    setTimeout(() => {
+      resolve(msg);
+    }, tempo);
+  });
+}
+
+esperaAi('Conexão com o BD', rand(1, 3))
+  .then(resposta => {
+    console.log(resposta);
+    return esperaAi('Buscando dados da BASE', rand(1, 3));
+  })
+  .then(resposta => {
+    console.log(resposta);
+    return esperaAi(22222, rand(1, 3));
+  })
+  .then(resposta => {
+    console.log(resposta);
+  }).then(() => {
+    console.log('Exibe dados na tela');
+  })
+  .catch(e => {
+    console.log('ERRO:', e);
+  });
+
+console.log('Isso aqui será exibido antes de qualquer promisse.');
+-----
+==========
+
+//Metodos de Promises:
+//Promise.all, Promise.race, Promise.resolve, Promise.reject
+
+//Promisse.all: vc vai passar um array para ele com promessas ou valores ja resolvidos, e ele vai te entregar uma promessa soh, com os valores dentro de um array;
+
+//Promise.race: vai retornar sempre a promessa que for resolvida primeiro;
+
+//Os estados da promisse:
+- Pendente/Pending: esta sendo executada e ainda nao retornou o valor;
+- Fullfilled: resolvida, sucesso;
+- Rejected: reseijtada;
+
+==========
+
+//Async await:
+
+Async pode ser usada dentro de uma funcao, para que uma promisse possa ser finalizada.
+
+function rand(min = 0, max = 3) {
+  min *= 1000;
+  max *= 1000;
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function esperaAi(msg, tempo) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if(typeof msg !== 'string') {
+        reject('CAI NO ERRO');
+        return;
+      }
+
+      resolve(msg.toUpperCase() + ' - Passei na promise');
+      return;
+    }, tempo);
+  });
+}
+
+async function executa() {
+  try {
+    const fase1 = await esperaAi('Fase 1', 1000);
+    console.log(fase1);
+
+    setTimeout(function() {
+      console.log('Essa promise estava pendente', fase1);
+    }, 1100);
+
+    const fase2 = await esperaAi('Fase 2', rand());
+    console.log(fase2);
+
+    const fase3 = await esperaAi('Fase 3', rand());
+    console.log(fase3);
+
+    console.log('Terminamos na fase:', fase3);
+  } catch(e) {
+    console.log(e);
+  }
+}
+// executa();
+
+const teste2 = esperaAi('qlq', 5000);
+console.log(teste2);
+
+==========
+
+//AJAX (XMLHttpRequest) (melhor usar Axios):
+
+//basico:
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', "URL", true);	//o true eh se eh asyncrono(true) ou syncrono(false);
+xhr.send();
+
+-----
+
+const request = obj => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(obj.method, obj.url, true);
+    xhr.send();
+
+    xhr.addEventListener('load', () => {
+      if(xhr.status >= 200 && xhr.status < 300) {
+        resolve(xhr.responseText);
+      } else {
+        reject(xhr.statusText);
+      }
+    });
+  });
+};
+
+document.addEventListener('click', e => {
+  const el = e.target;
+  const tag = el.tagName.toLowerCase();
+
+  if (tag === 'a') {
+    e.preventDefault();
+    carregaPagina(el);
+  }
+});
+
+async function carregaPagina(el) {
+  const href = el.getAttribute('href');
+
+  const objConfig = {
+    method: 'GET',
+    url: href
+  };
+
+  try {
+    const response = await request(objConfig);
+    carregaResultado(response);
+  } catch(e) {
+    console.log(e);
+  }
+}
+
+function carregaResultado(response) {
+  const resultado = document.querySelector('.resultado');
+  resultado.innerHTML = response;
+}
+
+-----
+
+==========
+
+//FETCH API (GET);
+
+----
+
+document.addEventListener('click', e => {
+  const el = e.target;
+  const tag = el.tagName.toLowerCase();
+
+  if (tag === 'a') {
+    e.preventDefault();
+    carregaPagina(el);
+  }
+});
+
+async function carregaPagina(el) {
+  try {
+    const href = el.getAttribute('href');
+    const response = await fetch(href);
+
+    if(response.status !== 200) throw new Error('ERRO 404!');
+
+    const html = await response.text();
+    carregaResultado(html);
+  } catch(e) {
+    console.log(e);
+  }
+}
+
+function carregaResultado(response) {
+  const resultado = document.querySelector('.resultado');
+  resultado.innerHTML = response;
+}
+
+----
+
+==========
+
+//AXIOS:
+
+----
+
+fetch('pessoas.json')
+  .then(resposta => resposta.json())
+  .then(json => carregaElementosNaPagina(json));
+
+// axios('pessoas.json')
+//   .then(resposta => carregaElementosNaPagina(resposta.data));
+
+function carregaElementosNaPagina(json) {
+  const table = document.createElement('table');
+
+  for(let pessoa of json) {
+    const tr = document.createElement('tr');
+
+    let td1 = document.createElement('td');
+    td1.innerHTML = pessoa.nome;
+    tr.appendChild(td1);
+
+    let td2 = document.createElement('td');
+    td2.innerHTML = pessoa.idade;
+    tr.appendChild(td2);
+
+    table.appendChild(tr);
+  }
+
+  const resultado = document.querySelector('.resultado');
+  resultado.appendChild(table);
+}
+
+----
+
+==========
+
+//Ferramentas Node:
+"webpack, path, "
+
+==========
+
+//Module Export //Import:
+
+-----
+
+const nome = 'Jack';
+const sobrenome = 'Bravo';
+const idade = 30;
+
+function soma(x,y){
+	return x+y;
+}
+
+export{ nome };
+
+-----
+
+import {nome} from './modulo1';
+
+constole.log(nome);
+
+-----
+-----
+
+const nome = 'Jack';
+const sobrenome = 'Bravo';
+const idade = 30;
+
+function soma(x,y){
+	return x+y;
+}
+
+export{ nome, sobrenome, idade, soma };
+
+-----
+
+import {nome, sobrenome, idade, soma} from './modulo1';
+
+console.log(nome, sobrenome, idade, soma);
+console.log(soma(5,5));
+
+-----
+-----
+
+//se tiver o mesmo nome ja usado no arquivo, posso modificar usando um "as";
+
+import {nome as nome2, sobrenome as sobrenome2, idade, soma} from './modulo1';
+
+const nome = 'Joao';
+const sobrenome = 'Silva';
+
+console.log(nome, sobrenome, nome2, sobrenome2, idade, soma);
+console.log(soma(5,5));
+
+-----
+
+//posso fazer a mesma coisa, exportando com outro nome, usando "as";
+
+const nome = 'Jack';
+const sobrenome = 'Bravo';
+const idade = 30;
+
+function soma(x,y){
+	return x+y;
+}
+
+export{ nome as nome2, sobrenome as sobrenom2, idade, soma };
+
+-----
+-----
+
+//posso exportar tudo separadamente tambem;
+
+export const nome = 'Jack';
+export const sobrenome = 'Bravo';
+export const idade = 30;
+
+export function soma(x,y){
+	return x+y;
+}
+
+//exportar uma classe tambem:
+
+export class Pessoa{
+	constructor(nome, sobrenome){
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+	}
+}
+
+-----
+-----
+
+//importar tudo:
+
+import * as MeuModulo from './modulo1';
+
+console.log(MeuModulo);
+
+-----
+-----
+
+//Exportar de maneira 'default', podendo colocar qualquer nome na importacao;
+
+export default function soma(x,y){
+	return x+y;
+}
+
+-----
+
+//importo agora com qualquer nome, porque ela eh default;
+
+import qualquerNome from './modulo1';
+
+console.log(qualquerNome(5,5));
+
+-----
+-----
+
+//posso exportar como default uma const no export;
+
+const nome = 'Jack';
+const sobrenome = 'Bravo';
+const idade = 30;
+
+export { nome as default, sobrenome, idade };
+
+-----
+-----
+
+//posso importar o padrao sem {} e o resto colocar nas chaves;
+
+import multiplica, {nome, sobrenome, idade, soma} from './modulo1';
+console.log(multiplica(5,40));
+
+-----
+-----
+
+export class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  fetchData() {
+    return new Promise((resolve) => {
+      return setTimeout(() => {
+        return resolve(this);
+      }, 2000);
+    });
+  }
+}
+
+-----
+
+import { Person } from './test-modules/person';
+
+const person1 = new Person('Luiz', 'Otávio');
+
+// Teste de promise (2 segundos)
+person1.fetchData().then((_person) => console.log(person1));
+
+// Teste async/await
+async function run() {
+  // 2 segundos
+  const pessoa = await new Person('João', 'Miranda').fetchData();
+  console.log(pessoa.firstName, pessoa.lastName);
+}
+run();
+
+-----
+
+==========
+
+Sessao NODE:
+
+==========
+
+//Modulos:
+
+class Pessoa{
+	constructor(nome){
+		this.nome = nome;
+	}
+}
+
+//maneira frequente:
+exports.Pessoa = Pessoa;
+//exportando na chave pessoa a classe pessoa;
+
+//posso exportar uma se fosse o caso(exeplo):
+module.exports.nome = 'Luiz';
+
+//tem o exports, que nao posso fazer com objetos;
+exports = {}
+
+----
+
+const path = require('path');			//importando algo padrao do node;
+const axios = require('axios');			//importando o axios que foi instalado;
+const { Pessoa } = require('./mod1');		//importando minha classe;
+
+const p1 = new Pessoa('Luiz');
+console.log(p1);
+
+axios('http://www.google.com.br/images')
+	.then(response => console.log(response.data));
+	.catch(e => console.log(e));
+
+------
+------
+
+module.exports = class Cachorro{
+	constructor(nome){
+		this.nome = nome;
+	}
+
+	latir(){
+	console.log('${this.nome} esta fazendo au au);
+	}
+}
+
+----
+
+const Cachorro = require('./mod');
+
+const cachorrinho = new Cachorro('Dog');
+cachorrinho.latir();
+
+----
+==========
+
+//DIRETORIOS e CAMINHOS:
+
+__filename		//caminho do arquivo atual;
+__dirname		//nome da pasta atual;
+
+//resolver o caminho nao importando se estou em windows ou linux;
+path.resolve(__dirname, '..', '..', 'imagens');
+
+==========
+
+//FS: NODE FILE SYSTEM;
+//rootdir, readdir, __dirname, path.resolve, walk, stat;
+
+----
+
+//declaro a importacao dos modulos do node;
+const fs = require('fs').promises;
+const path = require('path');
+
+--
+//exemplo de criacao:
+
+fs.readdir(path.resolve(__dirname))			//caminho do arquivo;
+	.then(files => console.log(files))
+	.catch(e => console.log(e));
+--
+
+//usando com async:
+
+async function readdir(rootDir)
+{
+	rootDir = rootDir || path.resolve(__dirname);	//se a rootdir for enviada, se nao usar o caminho padrao;
+	const files = await fs.readdir(rootDir);
+	walk(files, rootDir);	
+}
+
+async funcion walk(files)
+{
+	for (let file of files){
+		const fileFullPath = path.resolve(rootDir, file);	//vou enviar a rootDir e o arquivo;
+		const stats = await fs.stat(fileFullPath);		//vai fazer estatisticas;
+		console.log(file, stats.isDirectory());			//verifica se o arquivo eh um diretorio;
+	
+		//verifica se eh um diretorio e lista;
+		if(stats.isDirectory()){
+			readdir(fileFullPath);
+			continue;
+		}
+	}
+}
+
+//enviando sem caminho:
+readdir();
+
+//enviando com caminho:
+readdir('/media/Documentos/js/');
+
+----
+
+==========
+
+//FS - Ler e escrever arquivos;
+
+----
+
+//escrever:
+
+const fs = require('fs').promises;
+
+module.exports = (caminhoDoArquivo, dadosConteudo) => {
+  fs.writeFile(caminhoDoArquivo, dadosConteudo, { flag: 'w', encoding: 'utf8' });
+};
+
+//Parametros:
+//w: apaga tudo e reescreve o arquivo;
+//a: escreve depois do final da frase/arquivo, usando um '/w';
+//'\n' na string do "dadosConteudo", ex: 'Frase 1\n', no lugar do "dadosConteudo";
+
+----
+
+//ler:
+
+const fs = require('fs').promises;
+
+module.exports = (caminho) => fs.readFile(caminho, 'utf8');
+
+----
+
+//app:
+
+const path = require('path');
+const caminhoArquivo = path.resolve(__dirname, 'teste.json');
+const escreve = require('./modules/escrever');
+const ler = require('./modules/ler');
+
+const pessoas = [
+  { nome: 'João' },
+  { nome: 'Maria' },
+  { nome: 'Eduardo' },
+  { nome: 'Luiza' },
+];
+const json = JSON.stringify(pessoas, '', 2);
+escreve(caminhoArquivo, json);
+
+async function leArquivo(caminho) {
+  const dados = await ler(caminho);
+  renderizaDados(dados);
+}
+
+function renderizaDados(dados) {
+  dados = JSON.parse(dados);
+  dados.forEach(val => console.log(val.nome));
+}
+leArquivo(caminhoArquivo);
+
+----
+
+==========
+
+//NODE/EXPRESS/Basico Para Rodar o Server;
+
+----
+
+const express = require('express');
+const app = express();
+
+//         Criar   ler   atualizar apagar
+// CRUD -> CREATE, READ, UPDATE,   DELETE
+//         POST    GET   PUT       DELETE
+
+app.get('/', (req, res) => {
+	res.send('
+	<form action='/' method='POST'>
+	Nome: <input type='text' name='nome'>
+	<button>Enviar</button>
+	</form>
+	');
+});
+
+app.post('/', (req, res) => {
+	res.send(`Recebi o formulario ${req.nome}!`);
+}
+
+app.get('/contato', (req, res) => {
+	res.send('Obrigado por entrar em contato com a gente!');
+}
+
+app.listen(3000, () => {
+	console.log('Servidor escutando na porta 3000');
+}
+
+----
+
+==========
+
+//EXPRESS - req.params, req.query, req.body;
+
+----
+
+const express = require("express");
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.send(`
+  <form action="/" method="POST">
+  Nome do cliente: <input type="text" name="qualquercoisa"><br>
+  Outro campo: <input type="text" name="aquioutrocampo">
+  <button>Olá mundo</button>
+  </form>
+  `);
+});
+
+app.get("/testes/:idUsuarios?/:parametro?", (req, res) => {
+  // /profiles/3
+  // /profiles/?chave1=valor1&chave2=valor2&chave3=valor3
+  //
+  console.log(req.params);
+  console.log(req.query);
+  res.send(req.query.facebookprofile);
+});
+
+app.post("/", (req, res) => {
+  console.log(req.body);
+  res.send(`O que você me enviou foi: ${req.body.qualquercoisa}`);
+});
+
+app.listen(3000, () => {
+  console.log("Acessar http://localhost:3000");
+  console.log("Servidor executando na porta 3000");
+});
+
+----
+
+==========
+
+//Express Router e Controllers;
+
+----
+
+//server.js
+
+const express = require('express');
+const app = express();
+const routes = require('./routes');
+
+app.use(express.urlencoded({ extended: true }));
+app.use(routes);
+
+app.listen(3000, () => {
+  console.log('Acessar http://localhost:3000');
+  console.log('Servidor executando na porta 3000');
+});
+
+----
+
+//routes.js
+
+const express = require('express');
+const route = express.Router();
+const homeController = require('./controllers/homeController');
+const contatoController = require('./controllers/contatoController');
+
+// Rotas da home
+route.get('/', homeController.paginaInicial);
+route.post('/', homeController.trataPost);
+
+// Rotas de contato
+route.get('/contato', contatoController.paginaInicial);
+
+
+module.exports = route;
+
+----
+
+//contatoController;
+
+exports.paginaInicial = (req, res) => {
+  res.send('Obrigado por entrar em contato.');
+};
+
+----
+
+//homeController;
+
+exports.paginaInicial = (req, res) => {
+  res.send(`
+  <form action="/" method="POST">
+  Nome do cliente: <input type="text" name="qualquercoisa"><br>
+  Outro campo: <input type="text" name="aquioutrocampo">
+  <button>Olá mundo</button>
+  </form>
+  `);
+};
+
+exports.trataPost = (req, res) => {
+  res.send('Ei, sou sua nova rota de POST.');
+};
+
+----
+
+==========
+
+//MIDWARE:
+
+function meuMiddleware(req, res, next){
+	req.session = {nome: 'Luiz', sobrenome: 'Miranda'};
+	console.log();
+	console.log('Passei no seu middleware!');
+	console.log();
+	next();
+}
+
+//Rotas da home:
+route.get('/', meuMiddleware, homeController.paginaInicial, function(req, res, next){
+	console.log();
+	console.log('Ainda estou aqui!");
+});
+
+==========
+
+//DB Mongo (Aula 14):
+
+//instalar o 'dotenv' para resguardar senha: 'npm install dotenv'
+//instalar o mongoose: 'npm install mongoose'
+
+//Para fazer a conexao com a base de dados, primeiro chamamos o mongoose:
+
+const mongoose = require('mongoose');
+
+//conectar ao mongoose:
+
+const connectionString: 'mongodb+srv://linkDoSeuMongo';
+mongoose.connect(process.env.CONNECTIONSTRING, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    app.emit('pronto');
+  })
+  .catch(e => console.log(e));
+
+==========
+
+//SESSION:
+
+//instalar
+npm i express-session connect-mongo connect-flash
+
+//declaro elas:
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const flash = require('connect-flash');
+
+//opcoes da sessao:
+const sessionOptions = session({
+  secret: 'akasdfj0út23453456+54qt23qv  qwf qwer qwer qewr asdasdasda a6()',
+  store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+    httpOnly: true
+  }
+});
+
+//usar com o app:
+app.use(sessionOptions);
+app.use(flash());
+
+==========
+
+//Helmet e CSRF:
+
+//instalar:
+npm i csurf
+
+//adicionando:
+const helmet = require('helmet');
+const csrf = require('csurf');
+
+app.use(csrf());
+
+
+==========
+
+==========
+
+==========
+
+
+==========
+
+==========
+
+==========
+
+
+
+
+
+
+
+
+
+
