@@ -85,6 +85,7 @@ getFullYear(): Retorna o ano completo (exemplo: 2024).
 getHours(): Retorna a hora no formato 24 horas (0-23).
 getMinutes(): Retorna os minutos (0-59).
 getSeconds(): Retorna os segundos (0-59).
+
 Exemplo de Saída Formatada
 Se você quiser formatar o horário com dois dígitos, pode usar String.prototype.padStart:
 
